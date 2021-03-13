@@ -59,6 +59,10 @@ public:
     {
         
     }
+    TimeSeries(const TimeSeries& timeseries):_labels(timeseries._labels),_timeReadings(timeseries._timeReadings),_tsArray(timeseries._tsArray)
+    {
+        
+    }
         
     //ignored file io interfaces
     
