@@ -92,7 +92,7 @@ public:
         return _timeReadings[n];
     }
     
-    string& getLabel(JInt n) const
+    string getLabel(JInt n) const
     {
         return _labels[n];
     }
@@ -162,12 +162,12 @@ public:
     virtual void print(ostream& stream) const
     {
         stream<<"time readings ["<<_timeReadings.size()<<"]:";
-        for (JInt i = 0; i<_timeReadings.size(); ++i) {
+        for (JInt i = 0; i<(int)_timeReadings.size(); ++i) {
             stream<<_timeReadings[i] << ",";
         }
         stream<<"\n";
         stream<<"time series ["<<_tsArray.size()<<"]:";
-        for(JInt i = 0;i<_tsArray.size();++i)
+        for(JInt i = 0;i<(int)_tsArray.size();++i)
         {
             _tsArray[i].print(stream);
             stream << ",";

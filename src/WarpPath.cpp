@@ -94,7 +94,7 @@ ColMajorCell WarpPath::get(JInt index) const
 {
     //Original Java code have boundary check bug here.
     //if ( (index>this.size()) || (index<0) )
-    FDASSERT0(index>=0 && index<_tsIindexes.size(), "NoSuchElementException");
+    FDASSERT0(index>=0 && index<(int)_tsIindexes.size(), "NoSuchElementException");
     return ColMajorCell(_tsIindexes[index],_tsJindexes[index]);
     
 }
@@ -118,7 +118,7 @@ bool WarpPath::operator<(const WarpPath& path) const //For containers, so arbite
 
 void WarpPath::print(ostream& stream) const
 {
-    for (JInt i = 0; i<_tsIindexes.size(); ++i) {
+    for (JInt i = 0; i<(int)_tsIindexes.size(); ++i) {
         stream<<"("<<_tsIindexes[i]<<"," << _tsJindexes[i] << ") ";
     }
     stream<<"\n";

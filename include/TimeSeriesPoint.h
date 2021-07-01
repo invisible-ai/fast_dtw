@@ -65,7 +65,7 @@ public:
     void print(ostream& stream) const
     {
         stream<<"p(";
-        for (JInt i = 0; i<value.size(); ++i) {
+        for (JInt i = 0; i<(int)value.size(); ++i) {
             stream << value[i] << ",";
         }
         stream <<")";

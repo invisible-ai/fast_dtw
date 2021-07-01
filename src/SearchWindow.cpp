@@ -117,7 +117,7 @@ void SearchWindow::expandSearchWindow(JInt radius)
         for (; it.hasNext();) {
             windowCells.push_back(it.next());
         }
-        for (JInt cell = 0; cell<windowCells.size(); ++cell) {
+        for (JInt cell = 0; cell<(int)windowCells.size(); ++cell) {
             ColMajorCell currentCell = windowCells[cell];
             if (currentCell.getCol()!=minI() && currentCell.getRow()!=maxJ()) {// move to upper left if possible
                 // Either extend full search radius or some fraction until edges of matrix are met.

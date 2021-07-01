@@ -19,10 +19,10 @@ class SearchWindow;
 
 class SearchWindowIterator
 {
-    JInt _currentI;
-    JInt _currentJ;
     const SearchWindow* _window;
     JBool _hasMoreElements;
+    JInt _currentI;
+    JInt _currentJ;
     JInt _expectedModCount;
     
 protected:
