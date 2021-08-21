@@ -29,7 +29,7 @@ public:
         FDASSERT0(v1.size()==v2.size(),"ERROR:  cannot calculate the distance between vectors of different sizes.");
         double sqSum = 0.0;
         size_t size = v1.size();
-        for (JInt i = 0; i<size; ++i) {
+        for (JInt i = 0; (size_t)i<size; ++i) {
             sqSum+= pow((double)(v1[i]-v2[i]), 2.0);
         }
         return (ValueType)sqrt(sqSum);
