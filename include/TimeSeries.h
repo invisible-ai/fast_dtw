@@ -145,7 +145,7 @@ public:
     
     void addFirst(JDouble time, TimeSeriesPoint<ValueType,nDimension> const& values)
     {
-        FDASSERT(values.size()+1 == _labels.size(), "ERROR:  The TimeSeriesPoint contains the wrong number of values. expected:%ld,found:%ld",_labels.size()-1,values.size());
+        FDASSERT((std::size_t)(values.size()+1) == _labels.size(), "ERROR:  The TimeSeriesPoint contains the wrong number of values. expected:%ld,found:%ld",_labels.size()-1,values.size());
         FDASSERT0(time<_timeReadings[0], "ERROR:  The point being inserted into the beginning of the time series does not have the correct time sequence.");
         _timeReadings.insert(_timeReadings.begin(), time);
         _tsArray.insert(_tsArray.begin(),values);
@@ -153,7 +153,7 @@ public:
     
     void addLast(JDouble time, TimeSeriesPoint<ValueType,nDimension> const& values)
     {
-        FDASSERT(values.size()+1 == _labels.size(), "ERROR:  The TimeSeriesPoint contains the wrong number of values. expected:%ld,found:%ld",_labels.size()-1,values.size());
+        FDASSERT((std::size_t)(values.size()+1) == _labels.size(), "ERROR:  The TimeSeriesPoint contains the wrong number of values. expected:%ld,found:%ld",_labels.size()-1,values.size());
         FDASSERT0(_timeReadings.size()==0 || time>_timeReadings[_timeReadings.size() - 1], "ERROR:  The point being inserted into the beginning of the time series does not have the correct time sequence.");
         _timeReadings.push_back(time);
         _tsArray.push_back(values);
